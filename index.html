@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Angela Luvisia</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+    <audio id="bg-music" src="music.mp3" loop preload="auto"></audio>
+
+    <div id="overlay" onclick="startExperience()">
+        <div class="overlay-content">
+            <h1>Angela Luvisia</h1>
+            <p>Click to Begin</p>
+        </div>
+    </div>
+
+    <div id="heart-canvas"></div>
+
+    <main class="container" id="main-content" style="opacity: 0;">
+        <header class="fade-in">
+            <h1 class="name-title">Angela Luvisia</h1>
+            <div class="divider"></div>
+        </header>
+
+        <section class="video-section">
+            <div class="video-frame">
+                <video id="angela-video" src="1.mp4" muted loop></video>
+            </div>
+        </section>
+
+        <section class="text-content">
+            <h2 class="rothschild">ROTHSCHILD</h2>
+            <p class="context">After forensic examination of the relationship circumstances.</p>
+            
+            <div class="quote-box">
+                <p>"The architectonics of love clearly show. If crazy ever becomes an olympic event you should go."</p>
+                <span class="symbol">&</span>
+                <p>"If you were a pure bolt of fire cutting the skies I'd touch you risking my life... I'm fascinated by what the outcome would be."</p>
+            </div>
+        </section>
+
+        <section class="photo-mosaic">
+            <img src="1.png" class="pic p1">
+            <img src="2.png" class="pic p2">
+            <img src="3.png" class="pic p3">
+            <img src="4.png" class="pic p4">
+        </section>
+
+        <section class="lyrics-deep">
+            <p>Everytime I'm reachin' out to you, I start to sink</p>
+            <p class="highlight">I may be drowning with desire from your sweet, sweet touch</p>
+        </section>
+
+        <section class="proposal">
+            <p class="wit">You are far too smart to succumb to flattery,<br> 
+               definitely as interesting as a swiss army knife!!</p>
+            <h3 class="final-question">Angela, would you be my chocolate fix on Valentine's?</h3>
+            <div class="btn-group">
+                <button class="yes-btn" onclick="celebrate()">Yes, I will.</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="sketch.js"></script>
+    <script>
+        function startExperience() {
+            // Start the music
+            const song = document.getElementById('bg-music');
+            song.play();
+
+            // Unmute and start the video
+            const video = document.getElementById('angela-video');
+            video.muted = false;
+            video.play();
+
+            // Hide the overlay and reveal the content
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('main-content').style.opacity = '1';
+            document.getElementById('main-content').style.transition = 'opacity 2s ease-in';
+        }
+
+        function celebrate() {
+            alert("The best outcome possible! ❤️");
+        }
+    </script>
+</body>
+</html>
